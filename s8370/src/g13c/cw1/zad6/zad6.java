@@ -16,7 +16,7 @@ public class zad6 {
         arr_printed(arr);
         System.out.println();
         System.out.print("Sorted array: ");
-        Arrays.sort(arr);
+        arr = arr_sorted(arr);
         arr_printed(arr);
     }
 
@@ -27,6 +27,27 @@ public class zad6 {
             if(i+1 < arr.length) System.out.print(", ");
         }
         System.out.print("]");
+    }
+
+    public static int[] arr_sorted(int [] arr){
+        int[] arr2 = new int[arr.length];
+        int mIndex = -1, mValue = -1, lastIndex = 0;
+        for (int i = 0; i < arr.length; i++) {
+            mIndex = -1; mValue = -1;
+            for (int j = 0; j < arr.length; j++) {
+                if((mIndex < 0 && arr[j] > 0) || (arr[j] < mValue && arr[j] > 0)){
+                    mIndex = j;
+                    mValue = arr[j];
+                }
+            }
+            if(mIndex >= 0){
+                arr2[lastIndex] = arr[mIndex];
+                arr[mIndex] = -1;
+                lastIndex++;
+            }
+
+        }
+        return arr2;
     }
 
 
