@@ -2,7 +2,6 @@ package g13c.cw2.zad5;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Person {
@@ -10,10 +9,10 @@ public class Person {
     private String surname;
     private LocalDate dateOfBirth;
     private LocalDate dateOfDeath;
-    private Address address;
+    private final Address address;
     private int borrowedBook = 0; // 0 = Nie wypożyczono, 1 = Wypożyczono
 
-    private static List<Person> listPersons = new ArrayList<Person>();
+    private static final List<Person> listPersons = new ArrayList<>();
 
     public Person(String name, String surname, LocalDate dateOfBirth, Address address) {
         setName(name);
@@ -50,9 +49,8 @@ public class Person {
         String resText = "";
         if(listPersons.size() > 0) {
             int counter  = 1;
-            Iterator<Person> personsIterator = listPersons.iterator();
-            while (personsIterator.hasNext()) {
-                resText += "["+counter+"] "+personsIterator.next().toString() + "\n";
+            for (Person listPerson : listPersons) {
+                resText += "[" + counter + "] " + listPerson.toString() + "\n";
                 counter++;
             }
         } else {
@@ -64,9 +62,8 @@ public class Person {
     public static String toStringSelected(List<Person> persons){
         String resText = "";
         if(persons.size() > 0) {
-            Iterator<Person> personsIterator = persons.iterator();
-            while (personsIterator.hasNext()) {
-                resText += personsIterator.next().toStringSimply()+", ";
+            for (Person person : persons) {
+                resText += person.toStringSimply() + ", ";
             }
         } else {
             resText = "Brak";
