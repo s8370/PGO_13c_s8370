@@ -12,7 +12,6 @@ public class Address {
         setCity(city);
         setStreet(street);
         setHouse(house);
-        setFlat(flat);
     }
 
     public Address(String country, String city, String street, int house, int flat) {

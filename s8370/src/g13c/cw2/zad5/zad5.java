@@ -61,7 +61,7 @@ public class zad5 {
         System.out.println(Book.toStringAll());
 
         // WYSZUKIWANIE PO GATUNKU
-        System.out.println("###### AWYSZUKIWANIE PO GATUNKU: ######\n");
+        System.out.println("###### WYSZUKIWANIE PO GATUNKU: ######\n");
         Book.FindBookByGenre(Genre.Classic);
 
     }
