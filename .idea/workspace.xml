@@ -71,10 +71,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="PGO_13c_s8370" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -94,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647188321023</updated>
       <workItem from="1647188323872" duration="186000" />
+      <workItem from="1648385687073" duration="517000" />
     </task>
     <servers />
   </component>
