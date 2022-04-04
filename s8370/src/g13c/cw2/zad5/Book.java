@@ -26,6 +26,34 @@ public class Book {
         setLanguage(language);
         listBooks.add(this);
     }
+    public Book(String name, Genre genre, Lang language, List<Person> authors){
+        setName(name);
+        setGenre(genre);
+        setLanguage(language);
+        listBooks.add(this);
+        if(authors.size() == 0){
+            throw new RuntimeException("Książka musi mieć conajmniej jednego autora");
+        } else {
+            for (Person author : authors) {
+                setAuthor(author);
+            }
+        }
+    }
+
+    public Book(String name, Genre genre, Lang language, List<Person> authors, LocalDate publishDate){
+        this(name, genre, language, authors);
+        setPublishDate(publishDate);
+    }
+
+    public Book(String name, Genre genre, Lang language, List<Person> authors, LocalDate publishDate, int numberOfPages){
+        this(name, genre, language, authors, publishDate);
+        setNumberOfPages(numberOfPages);
+    }
+
+    public Book(String name, Genre genre, Lang language, List<Person> authors, LocalDate publishDate, int numberOfPages, LocalDate createdDate){
+        this(name, genre, language, authors, publishDate, numberOfPages);
+        setCreatedDate(createdDate);
+    }
 
     public Book(String name, Genre genre, Lang language, LocalDate publishDate){
         this(name, genre, language);

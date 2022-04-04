@@ -1,5 +1,7 @@
 package g13c.cw2.zad5;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class zad5 {
 
@@ -8,9 +10,6 @@ public class zad5 {
         /*
             DANE TESTOWE
          */
-        Book b1 = new Book("Shining", Genre.Classic, Lang.English, LocalDate.parse("1977-11-04"), 245, LocalDate.parse("2015-05-01"));
-        Book b2 = new Book("Diuna", Genre.Fantasy, Lang.English);
-        Book b3 = new Book("Guardians of the Galaxy", Genre.Comics, Lang.Japanese, LocalDate.parse("2008-04-15"), 56);
 
         Person p1 = new Person("Stephen", "King", LocalDate.parse("1947-09-21"),
                 new Address("USA", "Portland", "Alberta", 1255, 12));
@@ -25,10 +24,9 @@ public class zad5 {
         Person p6 = new Person("Mario", "Puzo", LocalDate.parse("1920-10-15"), LocalDate.parse("1999-07-02"),
                 new Address("USA", "New York", "Central Road", 3));
 
-        b1.setAuthor(p1);
-        b2.setAuthor(p2);
-        b3.setAuthor(p5);
-        b3.setAuthor(p3);
+        Book b1 = new Book("Shining", Genre.Classic, Lang.English, new ArrayList() {{ add(p1);}}, LocalDate.parse("1977-11-04"), 245, LocalDate.parse("2015-05-01"));
+        Book b2 = new Book("Diuna", Genre.Fantasy, Lang.English, new ArrayList() {{ add(p1);}});
+        Book b3 = new Book("Guardians of the Galaxy", Genre.Comics, Lang.Japanese, new ArrayList() {{ add(p3); add(p5);}}, LocalDate.parse("2008-04-15"), 56);
 
         // WYPISANIE WSTĘPNE DANYCH
         System.out.println("###### Lista książek w bibliotece: ######\n");
