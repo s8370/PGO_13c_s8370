@@ -1,7 +1,6 @@
 package g13c.cw2.zad5;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class zad5 {
 
@@ -24,9 +23,12 @@ public class zad5 {
         Person p6 = new Person("Mario", "Puzo", LocalDate.parse("1920-10-15"), LocalDate.parse("1999-07-02"),
                 new Address("USA", "New York", "Central Road", 3));
 
-        Book b1 = new Book("Shining", Genre.Classic, Lang.English, new ArrayList() {{ add(p1);}}, LocalDate.parse("1977-11-04"), 245, LocalDate.parse("2015-05-01"));
-        Book b2 = new Book("Diuna", Genre.Fantasy, Lang.English, new ArrayList() {{ add(p1);}});
-        Book b3 = new Book("Guardians of the Galaxy", Genre.Comics, Lang.Japanese, new ArrayList() {{ add(p3); add(p5);}}, LocalDate.parse("2008-04-15"), 56);
+        ArrayList<Person> a1 = new ArrayList<Person>() {{ add(p1);}};
+        ArrayList<Person> a2 = new ArrayList<Person>() {{ add(p2);}};
+        ArrayList<Person> a3 = new ArrayList<Person>() {{ add(p3); add(p5); }};
+        Book b1 = new Book("Shining", Genre.Classic, Lang.English, a1, LocalDate.parse("1977-11-04"), 245, LocalDate.parse("2015-05-01"));
+        Book b2 = new Book("Diuna", Genre.Fantasy, Lang.English, a2);
+        Book b3 = new Book("Guardians of the Galaxy", Genre.Comics, Lang.Japanese, a3, LocalDate.parse("2008-04-15"), 56);
 
         // WYPISANIE WSTĘPNE DANYCH
         System.out.println("###### Lista książek w bibliotece: ######\n");
@@ -46,13 +48,13 @@ public class zad5 {
         b2.PlaceBack();
 
         // PUBLIKACJA NOWEJ KSIĄŻKI
-        Book b4 = new Book("Godfather", Genre.Classic, Lang.English, LocalDate.parse("1969-05-17"), 348);
-        p6.PublishBook(b4);
+        Book b4 = p6.PublishBook("Godfather", Genre.Classic, Lang.English, LocalDate.parse("1969-05-17"), 348);
 
         // WYPOŻYCZENIA KSIĄŻEK C.D.
         b4.BorrowBook(p2);
         b2.BorrowBook(p4);
         b2.PlaceBack();
+        b3.BorrowBook(p4);
 
         // AKTUALNE KSIĄŻKI
         System.out.println("###### Aktualna lista książek w bibliotece: ######\n");

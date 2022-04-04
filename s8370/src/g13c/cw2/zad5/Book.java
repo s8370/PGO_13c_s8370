@@ -160,7 +160,7 @@ public class Book {
     public LocalDate getCreatedDate() {
         return createdDate;
     }
-    private void setCreatedDate(LocalDate createdDate) {
+    void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -168,7 +168,7 @@ public class Book {
     public int getNumberOfPages() {
         return numberOfPages;
     }
-    private void setNumberOfPages(int numberOfPages) {
+    void setNumberOfPages(int numberOfPages) {
         if(numberOfPages < 0) {
             throw new RuntimeException("Wartość numberOfPages nie może być mniejsza od zera");
         } else {

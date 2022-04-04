@@ -46,29 +46,29 @@ public class Person {
     }
 
     public static String toStringAll(){
-        String resText = "";
+        StringBuilder resText = new StringBuilder();
         if(listPersons.size() > 0) {
             int counter  = 1;
             for (Person listPerson : listPersons) {
-                resText += "[" + counter + "] " + listPerson.toString() + "\n";
+                resText.append("[").append(counter).append("] ").append(listPerson.toString()).append("\n");
                 counter++;
             }
         } else {
-            resText = "Brak ludzi";
+            resText = new StringBuilder("Brak ludzi");
         }
-        return resText;
+        return resText.toString();
     }
 
     public static String toStringSelected(List<Person> persons){
-        String resText = "";
+        StringBuilder resText = new StringBuilder();
         if(persons.size() > 0) {
             for (Person person : persons) {
-                resText += person.toStringSimply() + ", ";
+                resText.append(person.toStringSimply()).append(", ");
             }
         } else {
-            resText = "Brak";
+            resText = new StringBuilder("Brak");
         }
-        return resText;
+        return resText.toString();
     }
 
     // Name
@@ -153,7 +153,24 @@ public class Person {
     }
 
     // Dodanie książki
-    public void PublishBook(Book book){
-        book.setAuthor(this);
+    public Book PublishBook(Book b){
+        b.setAuthor(this);
+        return b;
     }
+
+    public Book PublishBook(String name, Genre genre, Lang language, LocalDate publishDate){
+        Book b = new Book(name, genre, language);
+        b.setPublishDate(publishDate);
+        this.PublishBook(b);
+        return b;
+    }
+
+    public Book PublishBook(String name, Genre genre, Lang language, LocalDate publishDate, int numberOfPages){
+        Book b = new Book(name, genre, language, publishDate);
+        b.setNumberOfPages(numberOfPages);
+        this.PublishBook(b);
+        return b;
+    }
+
+
 }
