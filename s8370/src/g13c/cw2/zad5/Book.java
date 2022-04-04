@@ -20,12 +20,6 @@ public class Book {
 
     private final static List<Book> listBooks = new ArrayList<>();
 
-    public Book(String name, Genre genre, Lang language){
-        setName(name);
-        setGenre(genre);
-        setLanguage(language);
-        listBooks.add(this);
-    }
     public Book(String name, Genre genre, Lang language, List<Person> authors){
         setName(name);
         setGenre(genre);
@@ -52,21 +46,6 @@ public class Book {
 
     public Book(String name, Genre genre, Lang language, List<Person> authors, LocalDate publishDate, int numberOfPages, LocalDate createdDate){
         this(name, genre, language, authors, publishDate, numberOfPages);
-        setCreatedDate(createdDate);
-    }
-
-    public Book(String name, Genre genre, Lang language, LocalDate publishDate){
-        this(name, genre, language);
-        setPublishDate(publishDate);
-    }
-
-    public Book(String name, Genre genre, Lang language, LocalDate publishDate, int numberOfPages){
-        this(name, genre, language, publishDate);
-        setNumberOfPages(numberOfPages);
-    }
-
-    public Book(String name, Genre genre, Lang language, LocalDate publishDate, int numberOfPages, LocalDate createdDate){
-        this(name, genre, language, publishDate, numberOfPages);
         setCreatedDate(createdDate);
     }
 

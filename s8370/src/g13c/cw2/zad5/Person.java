@@ -152,23 +152,20 @@ public class Person {
         }
     }
 
-    // Dodanie książki
-    public Book PublishBook(Book b){
-        b.setAuthor(this);
-        return b;
-    }
-
+    // Publikacja książki
     public Book PublishBook(String name, Genre genre, Lang language, LocalDate publishDate){
-        Book b = new Book(name, genre, language);
+        ArrayList<Person> authors = new ArrayList<Person>();
+        authors.add(this);
+        Book b = new Book(name, genre, language, authors);
         b.setPublishDate(publishDate);
-        this.PublishBook(b);
         return b;
     }
 
     public Book PublishBook(String name, Genre genre, Lang language, LocalDate publishDate, int numberOfPages){
-        Book b = new Book(name, genre, language, publishDate);
+        ArrayList<Person> authors = new ArrayList<Person>();
+        authors.add(this);
+        Book b = new Book(name, genre, language, authors, publishDate);
         b.setNumberOfPages(numberOfPages);
-        this.PublishBook(b);
         return b;
     }
 
