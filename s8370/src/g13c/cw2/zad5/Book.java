@@ -32,6 +32,7 @@ public class Book {
                 setAuthor(author);
             }
         }
+
     }
 
     public Book(String name, Genre genre, Lang language, List<Person> authors, LocalDate publishDate){
@@ -116,6 +117,7 @@ public class Book {
         return genre;
     }
     public void setGenre(Genre genre) {
+        if(genre == null) throw new RuntimeException("Genre nie może być NULL");
         this.genre = genre;
     }
 
@@ -124,6 +126,7 @@ public class Book {
         return language;
     }
     public void setLanguage(Lang language) {
+        if(language == null) throw new RuntimeException("Language nie może być NULL");
         this.language = language;
     }
 
