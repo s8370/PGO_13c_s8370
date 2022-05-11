@@ -1,7 +1,11 @@
 package g13c.cw3.zad2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Storage {
     private int deliveryTime = 1;
+    private static final List<Product> products = new ArrayList<>();
 
     public Storage(int deliveryTime) {
         setDeliveryTime(deliveryTime);

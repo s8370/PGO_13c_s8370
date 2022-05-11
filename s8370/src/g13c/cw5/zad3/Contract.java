@@ -1,4 +1,4 @@
-package g13c.cw4.zad3;
+package g13c.cw5.zad3;
 
 public class Contract {
     protected Worker worker;
