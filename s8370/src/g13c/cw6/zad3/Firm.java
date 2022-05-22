@@ -1,4 +1,4 @@
-package g13c.cw5.zad3;
+package g13c.cw6.zad3;
 
 import java.util.ArrayList;
 import java.util.List;
