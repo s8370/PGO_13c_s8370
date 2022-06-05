@@ -1,6 +1,6 @@
 package g13c.cw5.zad2;
 
-public class zad2 {
+public class Main {
     public static void main(String[] args) {
 
         // Dostępne składniki
