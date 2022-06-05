@@ -5,11 +5,13 @@ public class Liquid extends Ingredient {
     protected int dissolubility = 100;
 
     public Liquid(String name, int baseReagent) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
     }
 
     public Liquid(String name, int baseReagent, int dissolubility) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
         setDissolubility(dissolubility);
     }
 

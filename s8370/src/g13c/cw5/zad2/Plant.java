@@ -4,11 +4,13 @@ public class Plant extends Ingredient {
     protected int toxity = 0;
 
     public Plant(String name, int baseReagent) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
     }
 
     public Plant(String name, int baseReagent, int toxity) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
         setToxity(toxity);
     }
 

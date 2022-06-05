@@ -1,17 +1,10 @@
 package g13c.cw5.zad2;
 
-public class Ingredient {
+public abstract class Ingredient {
     protected String name;
-    private int baseReagent = 0;
+    protected int baseReagent = 0;
 
-    public void print(){
-        System.out.println(this.getName()+" (reagent: "+this.getReagent()+")");
-    }
-
-    public Ingredient(String name, int baseReagent) {
-        setName(name);
-        setBaseReagent(baseReagent);
-    }
+    public abstract void print();
 
     public String getName() {
         return name;

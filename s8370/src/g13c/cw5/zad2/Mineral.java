@@ -5,11 +5,13 @@ public class Mineral extends Ingredient {
     protected int power = 0;
 
     public Mineral(String name, int baseReagent) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
     }
 
     public Mineral(String name, int baseReagent, int power) {
-        super(name, baseReagent);
+        setName(name);
+        setBaseReagent(baseReagent);
         setPower(power);
     }
 
