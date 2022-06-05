@@ -1,4 +1,4 @@
-package g13c.cw6.zad3;
+package g13c.cw6.zad3_stare;
 
 import java.time.LocalDate;
 import java.time.Period;
