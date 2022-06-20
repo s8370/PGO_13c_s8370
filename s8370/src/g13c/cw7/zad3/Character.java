@@ -14,13 +14,9 @@ public abstract class Character {
 
     public static void status() {
         System.out.println("====Status====");
-        List<String> states = new ArrayList<>();
         characters.sort(Comparator.comparing(Character::getType));
         for (Character character : characters) {
-            states.add(status(character));
-        }
-        for (String state : states) {
-            System.out.println(state);
+            System.out.println(status(character));
         }
         System.out.println("==============");
     }
