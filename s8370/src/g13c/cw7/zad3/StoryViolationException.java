@@ -1,6 +1,6 @@
 package g13c.cw7.zad3;
 
-class StoryViolationException extends Exception {
+class StoryViolationException extends RuntimeException {
 
     public StoryViolationException(String message) {
         super(message);

@@ -2,7 +2,7 @@ package g13c.cw7.zad3;
 
 public class Main {
 
-    public static void main(String[] args) throws StoryViolationException {
+    public static void main(String[] args) {
         Child tom = new Riddle("Tom Marvolo Riddle", Location.England);
         Orphanage woolsOrphanage = new Orphanage("Wool's Orphanage", Location.London);
 
